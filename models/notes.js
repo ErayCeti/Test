@@ -9,6 +9,9 @@ const NotesSchema = new Schema({
   lessonId: {
     type: String
   },
+  userId: {
+    type: String
+  },
   Link: {
     type: String
   },

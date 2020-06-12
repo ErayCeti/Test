@@ -1,5 +1,5 @@
 module.exports = {
-    createNot: async (parent, { data: { Name, Link, lessonId } }, { Not }) => {
+    createNot: async (parent, { data: { Name, Link, lessonId, userId } }, { Not }) => {
         if (Not.Name === " ") {
           throw new Error('asd');
         }
@@ -12,7 +12,8 @@ module.exports = {
         return await new Not({
             Name,
             Link,
-            lessonId
+            lessonId,
+            userId
         }).save();
     }
 }

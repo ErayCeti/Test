@@ -6,8 +6,10 @@ type Query {
 }
 
 type User {
-    UserName: String!,
-    email: String!
+  id:ID!
+  UserName: String!
+  email: String
+  Not: [Not]
 }
 
 type Mutation {
