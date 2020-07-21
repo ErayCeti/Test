@@ -6,7 +6,6 @@ const expressGraphql = require("express-graphql");
 const { ApolloServer } = require("apollo-server-express");
 const { importSchema } = require("graphql-import");
 const jwt = require("jsonwebtoken");
-const index = require('./routes/index');
 //DOTENV
 dotenv.config({
   path:'./config/env/config.env'
@@ -43,7 +42,6 @@ const optionsCors = {
   optionsSuccessStatus: 200,
 };
 const app = express();
-app.use('/', index);
 app.use(async (req, res, next) => {
 	const token = req.headers['authorization'];
 	if (token && token !== 'null') {
