@@ -29,7 +29,7 @@ const UserModel= new Schema({
         type: String,
         default: 'Kullanıcı'
     },
-    blocked: {
+    Block: {
         type: Boolean,  
         default: false
     }
