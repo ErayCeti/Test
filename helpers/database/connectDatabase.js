@@ -16,19 +16,5 @@ const connectDatabase = () => {
             console.log(err)
         })
 }
-// const connectDatabase = () => {
-//     mongoose.connect(uri, {
-//         useNewUrlParser: true,
-//         useFindAndModify : false,
-//         useCreateIndex: true,
-//         useUnifiedTopology: true
-//     })
-//     .then(() => {
-//         console.log("Mongodb bağladı");
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     })
-// }
 
 module.exports = connectDatabase; 

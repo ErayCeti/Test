@@ -18,7 +18,8 @@ const UserModel= new Schema({
         type: String,
         require: true,
         unique: true, //Tek mail ile kayd olunacak bunu sağlıyor
-        match: [/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/] // Burası sadece gmail hotmail olmasını sağlıyor
+        // Burası sadece gmail hotmail olmasını sağlıyor
+        match: [/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/] 
     },
     createdAt:{
         type: Date,
@@ -27,6 +28,10 @@ const UserModel= new Schema({
     role: {
         type: String,
         default: 'Kullanıcı'
+    },
+    blocked: {
+        type: Boolean,  
+        default: false
     }
 });
 

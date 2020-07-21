@@ -8,7 +8,7 @@ type Not {
     Name: String!
     Link: String!
     Lesson: Lesson
-    userId: ID!
+    User: User
 }
 
 type Mutation {
