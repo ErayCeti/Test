@@ -24,6 +24,10 @@ const NotesSchema = new Schema({
   },
   DeletedAt: {
     type: Date
+  },
+  Clicked: {
+    type: Number,
+    default: 0  
   }
 });
 

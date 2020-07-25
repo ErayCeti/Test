@@ -35,7 +35,7 @@ const Query = {
     },
     Notes: async(parent, args, { Not }) => {
       try {
-        return await Not.find({}).sort({'createdAt': 'desc'});
+        return await Not.find({}).sort({ 'Clicked': Not.Clicked });
 
       } catch (e) {
         throw new Error(e);
