@@ -1,0 +1,24 @@
+scalar Date
+type Query {
+    Chat(id:ID!): Chat
+    Chates: [Chat]
+}
+
+type Chat {
+    Message: String!
+    User: User!
+    CreatedAt: Date
+}
+
+type Mutation{
+    CreateChat(data: CreateChatInput): Chat!
+}
+
+input CreateChatInput{
+    Message: String!
+    userId: ID!
+}
+
+type Subscription {
+    Message(userId: ID): Chat!
+}

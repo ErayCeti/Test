@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
-const ClassSchema = new Schema({
-    ClassName:{
+const ChatSchema = new Schema({
+    Message:{
         type: String
     },
-    Not: {
+    userId:{
         type: String
     },
     CreatedAt:{
@@ -15,6 +14,6 @@ const ClassSchema = new Schema({
     }
 });
 
-const Class = mongoose.model("Class", ClassSchema);
+const Chat = mongoose.model("Chat", ChatSchema);
 
-module.exports = Class;
+module.exports = Chat;

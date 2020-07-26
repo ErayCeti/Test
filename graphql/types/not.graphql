@@ -10,7 +10,7 @@ type Not {
     Lesson: Lesson!
     User: User!
     Class: Class!
-    Clicked: Int
+    Clicked: String
 }
 
 type Mutation {

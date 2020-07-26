@@ -13,3 +13,7 @@
 # import Query from './types/class.graphql'
 # import Mutation from './types/class.graphql'
 
+
+# import Query from './types/chat.graphql'
+# import Mutation from './types/chat.graphql'
+# import Subscription  from './types/chat.graphql'

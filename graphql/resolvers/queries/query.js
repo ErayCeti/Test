@@ -8,7 +8,7 @@ const Query = {
     },
     users: async(parent, args, { User }) => {
       try {
-        return await User.find({}).sort({'createdAt': 'desc'});
+        return await User.find({}).sort({'CreatedAt': 'desc'});
 
       } catch (e) {
         throw new Error(e);
@@ -35,7 +35,7 @@ const Query = {
     },
     Notes: async(parent, args, { Not }) => {
       try {
-        return await Not.find({}).sort({ 'Clicked': Not.Clicked });
+        return await Not.find({}).sort({'CreatedAt':'desc'});
 
       } catch (e) {
         throw new Error(e);
@@ -50,7 +50,7 @@ const Query = {
     },
     Lessons: async (parent, args, { Lesson }) => {
       try {
-        return await Lesson.find({}).sort({'createdAt': 'desc'});
+        return await Lesson.find({}).sort({'CreatedAt': 'desc'});
       } catch (e) {
         throw new Error(e);
       }
@@ -64,10 +64,21 @@ const Query = {
     },
     Classes: async (parent, args, { Class }) => {
       try {
-        return await Class.find({}).sort({'createdAt': 'desc'});
+        return await Class.find({}).sort({'CreatedAt': 'desc'});
       } catch (e) {
         throw new Error(e);
       }
-    }
+    },
+    Chat: async (parent, args, { Chat }) => {
+      return await Chat.findById(args.id);
+    },
+    Chates: async (parent, args, { Chat }) => {
+      try {
+        return await Chat.find({}).sort({ 'CreatedAt':'desc' })
+      } catch (e) {
+        throw Error(e);
+      }
+    }    
+
 }
 module.exports = Query;

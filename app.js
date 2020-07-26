@@ -1,9 +1,10 @@
+const http = require('http');
 const express = require("express");
 
 const cors = require("cors");
 const dotenv = require("dotenv");
 const expressGraphql = require("express-graphql");
-const { ApolloServer } = require("apollo-server-express");
+const { ApolloServer, PubSub } = require("apollo-server-express");
 const { importSchema } = require("graphql-import");
 const jwt = require("jsonwebtoken");
 //DOTENV
@@ -19,6 +20,10 @@ const User = require("./models/user");
 const Not = require("./models/notes");
 const Lesson = require("./models/lesson");
 const Class = require("./models/class");
+const Chat = require("./models/chat");
+
+const pubsub = new PubSub();
+
 const server = new ApolloServer({
   typeDefs: importSchema("./graphql/sechema.graphql"),
   resolvers,
@@ -27,7 +32,9 @@ const server = new ApolloServer({
     Not,
     Lesson,
     Class,
-    activeUser: req.activeUser
+    pubsub,
+    Chat,
+    activeUser: req ?  req.activeUser : null
   }),
   introspection: true
 });
@@ -60,8 +67,11 @@ app.use(async (req, res, next) => {
 app.options(optionsCors, cors());
 app.use(cors());
 server.applyMiddleware({ app });
-var port = process.env.PORT || 3009;
 
-app.listen(port, () => {
+var port = process.env.PORT || 3009;
+const httpServer = http.createServer(app);
+server.installSubscriptionHandlers(httpServer);
+
+httpServer.listen(port, () => {
   console.log("server started");
 });
