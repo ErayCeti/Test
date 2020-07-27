@@ -34,7 +34,7 @@ const server = new ApolloServer({
     Class,
     pubsub,
     Chat,
-    activeUser: req ?  req.activeUser : null
+    activeUser: req.activeUser : null
   }),
   introspection: true
 });
