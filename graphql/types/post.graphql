@@ -1,5 +1,4 @@
 scalar Date
-
 type Query {
     Post(id: ID!): Post!
     Posts: [Post]

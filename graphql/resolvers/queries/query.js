@@ -76,9 +76,9 @@ const Query = {
         throw new Error(e);
       }
     },
-    Posts: async (parent, args, { Post }) => {
+    Posts: async(parent, args, { Post }) => {
       try {
-        return await Post.find({}).sort({'CreatedAt': 'desc'});
+        return await Post.find({}).sort({'CreatedAt':'desc'});
       } catch (e) {
         throw new Error(e);
       }
