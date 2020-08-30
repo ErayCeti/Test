@@ -8,7 +8,6 @@ const { ApolloServer } = require("apollo-server-express");
 const { importSchema } = require("graphql-import");
 const jwt = require("jsonwebtoken");
 //DOTENV
-
 dotenv.config({
   path:'./config/env/config.env'
 });
