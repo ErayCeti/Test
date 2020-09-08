@@ -9,11 +9,9 @@ const CommentSchema = new Schema({
     userId: {
         type: String
     },
-    
     postId: {
         type: String
     },
-
     CreatedAt: {
         type: Date,
         default: Date.now()
