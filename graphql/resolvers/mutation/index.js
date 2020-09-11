@@ -1,14 +1,14 @@
-const user = require('./user.mutation');
-const not = require('./not.mutation');
-const lesson = require('./lesson.mutation');
+const User = require('./user.mutation');
+const Not = require('./not.mutation');
+const Lesson = require('./lesson.mutation');
 const Class = require('./class.mutation');
 const Post = require('./post.mutation');
-const Comment = require('./comment.mutation');  
+const Comment = require('./comment.mutation');
 
 const Mutation = {
-    ...user,
-    ...not,
-    ...lesson,
+    ...User,
+    ...Not,
+    ...Lesson,
     ...Class,
     ...Post,
     ...Comment,
